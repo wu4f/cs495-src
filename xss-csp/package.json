@@ -1,0 +1,16 @@
+{
+	"name": "xss-csp-clickjacking",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wu4f/cs495-src"
+	},
+	"license": "Apache-2.0",
+	"description": "Simple NodeJS servers to deliver HTTP response headers related to preventing XSS and Clickjacking",
+       	"engines": {
+	       	"node": ">=8.0.0"
+       	},
+       	"dependencies": {
+	       	"express": "^4.0"
+       	}
+}
