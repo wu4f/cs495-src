@@ -1,4 +1,3 @@
-// Simple web server using JavaScript express
 var express = require('express')
 var app = express()
 function sendResponse(req, res, header) {
@@ -9,7 +8,6 @@ function sendResponse(req, res, header) {
 app.use('/xss-0', (req, res) => { sendResponse(req,res,'0'); })
 app.use('/xss-1', (req, res) => { sendResponse(req,res,'1'); })
 app.use('/xss-1-block', (req, res) => { sendResponse(req,res,'1; mode=block');})
-
 app.use('/xss-1-report', (req, res) => {
   sendResponse(req,res, '1; report=http://localhost:1234/report');
  })
