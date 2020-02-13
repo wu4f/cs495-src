@@ -19,7 +19,7 @@ for (let port of [1234, 4321]) {
         <p id="remote">is this going to be changed by remote script?</p>
         <script>document.querySelector('#inline').innerHTML = 'changed by inline script'</script>
         <script src="/script.js?id=origin"></script>
-        <script src="http://localhost:1234/script.js?id=remote"></script>
+        <script src="http://${req.hostname}:1234/script.js?id=remote"></script>
       </body>
       </html>
       `)
