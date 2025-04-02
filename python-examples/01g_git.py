@@ -2,7 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-site = "0ad700ac043474b4821c89fe006d0063.web-security-academy.net"
+site = ""
 s = requests.Session()
 uris_visited = set()
 uris_to_visit = ['/.git']
@@ -24,8 +24,8 @@ while len(uris_to_visit) > 0:
         # No Content-Type returned for files.  Save locally
         dirpath = os.path.dirname(current_uri.lstrip('/'))
         print(dirpath)
-        if not os.path.exists(dirpath):
-            os.makedirs(dirpath)
-        with open(current_uri.lstrip('/'),'wb+') as o:
+        if not os.path.exists('tmp/' + dirpath):
+            os.makedirs('tmp/' + dirpath)
+        with open('tmp/' + current_uri.lstrip('/'),'wb+') as o:
             o.write(resp.content)
             o.close()
